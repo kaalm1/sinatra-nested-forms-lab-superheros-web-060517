@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create a Team and Heroes!</h1>
+    <form class="" action="/teams" method="post">
+      Team Name: <input type="text" name="team[name]" value=""> <br>
+      Team Motto: <input type="text" name="team[motto]" value=""> <br>
 
+      <% (1..3).each do |x| %>
+      <h1>Hero <%=x%></h1>
+
+      Hero's Name: <%= "<input id='member#{x}_name' type='text' name='team[members][][name]' value=''>" %><br>
+      Hero's Power: <%= "<input id ='member#{x}_power' type='text' name='team[members][][power]' value=''>" %> <br>
+      Hero's Biography: <%= "<input id='member#{x}_bio' type='text' name='team[members][][bio]' value=''>" %> <br>
+      <% end %>
+      <br>
+      <input type="submit" name="" value="submit">
+    </form>
+  </body>
+</html>
